@@ -1,5 +1,4 @@
-# Trial Task for [Candidate Name]
-
+# Trial Task for Juan
 ## Objective
 The purpose of this trial task is to evaluate your skills in Python for web scraping, MySQL for database management, and HTML/CSS/JavaScript for building a simple front-end interface. The task involves scraping data from specified websites, storing it in a MySQL database, and creating a front-end page to display and filter the data.
 
