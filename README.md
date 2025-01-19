@@ -1,2 +1,91 @@
-# Trial-Project-Joan
-Trial project for evaluating skills for the full-stack developer position.
+# Trial Task for [Candidate Name]
+
+## Objective
+The purpose of this trial task is to evaluate your skills in Python for web scraping, MySQL for database management, and HTML/CSS/JavaScript for building a simple front-end interface. The task involves scraping data from specified websites, storing it in a MySQL database, and creating a front-end page to display and filter the data.
+
+---
+
+## Task Description
+### **1. Web Scraping**
+Scrape the following data from the `/services` pages of the provided websites:
+- **Service ID**
+- **Service Name**
+- **Rate per Thousand**
+- **Minimum Quantity**
+- **Maximum Quantity**
+- **Average Time**
+- **Category of the Service**
+- **Details/Description** (if available)
+
+### **Websites to Scrape**
+1. [smmbind.com](https://smmbind.com)
+2. [likesoutlet.com](https://likesoutlet.com)
+3. [godofpanel.com](https://godofpanel.com)
+4. [postlikes.com](https://postlikes.com)
+5. [bulkfollows.com](https://bulkfollows.com)
+6. [followiz.com](https://followiz.com)
+
+### **2. Database Setup**
+- Use **MySQL** to store the scraped data.
+- The database should have a table with columns for:
+  - `service_id`
+  - `service_name`
+  - `rate_per_thousand`
+  - `min_quantity`
+  - `max_quantity`
+  - `average_time`
+  - `category`
+  - `details` (optional, if scraped)
+
+### **3. Front-End Display**
+- Build a simple **HTML/CSS/JavaScript** front-end to:
+  - Display the scraped data in a table format.
+  - Include a filter feature to:
+    - Filter by **category**.
+    - Search by **service name**.
+    - Filter by a range of **rates per thousand** or **average time**.
+
+### **4. Performance Optimization**
+- Ensure the front-end loads and filters data efficiently, even for a large dataset.
+- Optimize MySQL queries for fast retrieval of data.
+
+---
+
+## Requirements
+1. Use **Python** for web scraping (e.g., BeautifulSoup, Selenium, Scrapy, or another tool of your choice).
+2. Use **MySQL** for the database.
+3. Use **HTML/CSS/JavaScript** for the front-end.
+4. Include a `requirements.txt` file for Python dependencies.
+5. Provide detailed comments in your code for clarity.
+6. Submit the task by pushing your code to the repository on GitHub.
+
+---
+
+## Deliverables
+1. **Python Script** for scraping the required data.
+2. **MySQL Database Dump** containing the scraped data.
+3. **Front-End Files** (HTML/CSS/JavaScript).
+4. A brief `README.md` explaining:
+   - How to run the scraper.
+   - How to set up the database.
+   - How to launch the front-end and test the filtering functionality.
+
+---
+
+## Deadline
+Complete the task within **3 days** from the start date.
+
+---
+
+## Evaluation Criteria
+- **Code Quality:** Clean, well-documented, and follows best practices.
+- **Functionality:** Completeness and accuracy of scraping, database setup, and front-end filtering.
+- **Efficiency:** Optimized database queries and fast front-end performance.
+- **Creativity:** Innovative or user-friendly design and implementation.
+
+---
+
+## Getting Started
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/[your-username]/[repository-name].git
