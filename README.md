@@ -28,14 +28,16 @@ Scrape the following data from the `/services` pages of the provided websites:
 ### **2. Database Setup**
 - Use **MySQL** to store the scraped data.
 - The database should have a table with columns for:
+  - `provider`
   - `service_id`
   - `service_name`
-  - `rate_per_thousand`
   - `min_quantity`
   - `max_quantity`
+  - `rate_per_thousand`
   - `average_time`
+  - `details/description` (if possible)
   - `category`
-  - `details` (optional, if scraped)
+  
 
 ### **3. Front-End Display**
 - Build a simple **HTML/CSS/JavaScript** front-end to:
@@ -43,7 +45,7 @@ Scrape the following data from the `/services` pages of the provided websites:
   - Include a filter feature to:
     - Filter by **category**.
     - Search by **service name**.
-    - Filter by a range of **rates per thousand** or **average time**.
+    - Filter by a range of **rates per thousand**.
 
 ### **4. Performance Optimization**
 - Ensure the front-end loads and filters data efficiently, even for a large dataset.
@@ -73,7 +75,7 @@ Scrape the following data from the `/services` pages of the provided websites:
 ---
 
 ## Deadline
-Complete the task within **3 days** from the start date.
+Complete the task within **5 days** from the start date.
 
 ---
 
