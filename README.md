@@ -42,7 +42,6 @@ Scrape the following data from the `/services` pages of the provided websites:
 - Build a simple **HTML/CSS/JavaScript** front-end to:
   - Display the scraped data in a table format.
   - Include a filter feature to:
-    - Filter by **category**.
     - Search by **service name**.
     - Filter by a range of **rates per thousand**.
 
