@@ -53,11 +53,12 @@ Scrape the following data from the `/services` pages of the provided websites:
 
 ## Requirements
 1. Use **Python** for web scraping (e.g., BeautifulSoup, Selenium, Scrapy, or another tool of your choice).
-2. Use **MySQL** for the database.
-3. Use **HTML/CSS/JavaScript** for the front-end.
-4. Include a `requirements.txt` file for Python dependencies.
-5. Provide detailed comments in your code for clarity.
-6. Submit the task by pushing your code to the repository on GitHub.
+2. Use **PHP** for the back-end.
+3. Use **MySQL** for the database.
+4. Use **HTML/CSS/JavaScript** for the front-end.
+5. Include a `requirements.txt` file for Python dependencies.
+6. Provide detailed comments in your code for clarity.
+7. Submit the task by pushing your code to the repository on GitHub.
 
 ---
 
@@ -65,7 +66,8 @@ Scrape the following data from the `/services` pages of the provided websites:
 1. **Python Script** for scraping the required data.
 2. **MySQL Database Dump** containing the scraped data.
 3. **Front-End Files** (HTML/CSS/JavaScript).
-4. A brief `README.md` explaining:
+4. **Back-End Files** (PHP).
+5. A brief `README.md` explaining:
    - How to run the scraper.
    - How to set up the database.
    - How to launch the front-end and test the filtering functionality.
