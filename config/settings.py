@@ -19,6 +19,8 @@ class Logs:
 @dataclass
 class ApiKeys:
     postlikes: str
+    bulkfollows: str
+    followiz: str
 @dataclass
 class Settings:
     db: Db
@@ -45,6 +47,8 @@ def get_settings(path: str):
         ),
         api_keys=ApiKeys(
             postlikes=env.str('POSTLIKES_API_KEY'),
+            bulkfollows=env.str('BULKFOLLOWS_API_KEY'),
+            followiz=env.str('FOLLOWIZ_API_KEY'),
         )
     )
 
