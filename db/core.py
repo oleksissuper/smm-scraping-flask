@@ -1,4 +1,5 @@
 from mysql.connector import connect, Error
+from mysql.connector.cursor import MySQLCursorDict
 import time
 import json
 from config.settings import settings
@@ -21,7 +22,7 @@ class Db():
                     password=settings.db.db_password,
                     database=settings.db.db_database
                 )
-                self.cursor = self.connection.cursor()
+                self.cursor = self.connection.cursor(cursor_class=MySQLCursorDict)
                 return 
             except Error as e:
                 self.logger.error(f"Connection failed: {e}")
@@ -118,10 +119,12 @@ class IsDbTable(Db):
                 `minimum_quantity` BIGINT,
                 `maximum_quantity` BIGINT,
                 `average_time` VARCHAR(255),
-                `category_service` JSON,
+                `category_service` VARCHAR(255),
                 `description` TEXT,
                 `source` VARCHAR(255) NOT NULL,
                 `add_to_db` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                KEY `idx_category_service` (`category_service`),
+                KEY `idx_service_name` (`service_name`),
                 UNIQUE KEY `unique_service_source` (`service_id`, `source`)
             ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
         """)

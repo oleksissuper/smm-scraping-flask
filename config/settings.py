@@ -8,24 +8,27 @@ class Db:
     db_database: str
     db_host: str
     db_port: int
-
 @dataclass
 class Logs:
     level: str
     dir: str
     format: str
     separate_log_without_rollover: bool
-
 @dataclass
 class ApiKeys:
     postlikes: str
     bulkfollows: str
     followiz: str
 @dataclass
+class ServicesFilters:
+    networks: list
+    filters: list
+@dataclass
 class Settings:
     db: Db
     logs: Logs
     api_keys: ApiKeys
+    services: ServicesFilters
 
 def get_settings(path: str):
     env = Env()
@@ -49,6 +52,30 @@ def get_settings(path: str):
             postlikes=env.str('POSTLIKES_API_KEY'),
             bulkfollows=env.str('BULKFOLLOWS_API_KEY'),
             followiz=env.str('FOLLOWIZ_API_KEY'),
+        ),
+        services=ServicesFilters(
+            networks = [
+                "All services",
+                "Instagram",
+                "TikTok",
+                "YouTube",
+                "Facebook",
+                "Twitter",
+                "LinkedIn",
+                "Snapchat",
+                "Shopee",
+                "Amazon",
+            ],
+            filters = [
+                "Followers",
+                "Likes",
+                "Comments",
+                "Shares",
+                "Subscribers",
+                "Video Views",
+                "Live Stream Views",
+                "Clicks",
+            ]
         )
     )
 

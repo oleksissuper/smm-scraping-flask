@@ -1,7 +1,7 @@
 import requests
 import re
 from utils.logger import Logger
-
+from config.settings import settings
 
 class CreateSession():
     def __init__(self, source: str):
@@ -27,6 +27,9 @@ class CreateSession():
         return response.json()
     
     def to_dict(self) -> dict:
+        category_service = ""
+        if self.category_service:
+            category_service = ', '.join(self.category_service)
         return {
             "service_id": int(self.service_id),
             "service_name": self.clean_string(self.service_name),
@@ -34,7 +37,7 @@ class CreateSession():
             "minimum_quantity": self.clean_int(self.minimum_quantity),
             "maximum_quantity": self.clean_int(self.maximum_quantity),
             "average_time": self.clean_string(self.average_time),
-            "category_service": self.category_service,
+            "category_service": category_service,
             "description": self.clean_string(self.description),
             "source": self.source
         }
@@ -56,8 +59,9 @@ class CreateSession():
     
     def categorize_service(self, service_name: str) -> list:
         result = set()
-        words = ["Instagram", "TikTok", "YouTube", "Facebook", "Twitter", "LinkedIn", "Snapchat", "Shopee", "Amazon", 
-                 "Followers", "Likes", "Comments", "Shares", "Subscribers", "Video Views", "Live Stream Views", "Clicks"]
+        words = []
+        words.extend(settings.services.networks)
+        words.extend(settings.services.filters)
         for word in words:
             if re.search(rf"\b{re.escape(word)}\b", service_name, re.IGNORECASE):
                 result.add(word)

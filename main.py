@@ -1,3 +1,4 @@
+import schedule
 from scraper.smmbind_com import Smmbind
 from scraper.likesoutlet_com import Likesoutlet
 from scraper.godofpanel_com import Godofpanel
@@ -6,7 +7,7 @@ from scraper.bulkfollows_com import Bulkfollows
 from scraper.followiz_com import Followiz
 from db.core import IsDbCreated, IsDbTable
 
-def main():
+def scrapers():
     Smmbind().scrape()
     Likesoutlet().scrape()
     Godofpanel().scrape()
@@ -20,4 +21,7 @@ def check_db():
 
 if __name__ == "__main__":
     check_db()
-    main()
+    scrapers()
+    schedule.every(1).day.do(scrapers)
+    while True:
+        schedule.run_pending()
