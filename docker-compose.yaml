@@ -6,8 +6,8 @@ services:
     container_name: mysql_db
     restart: always
     environment:
-      MYSQL_DATABASE: ${DB_NAME}
-      MYSQL_ROOT_PASSWORD: ${DB_PASS}
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     ports:
       - "3306:3306"
     volumes:
@@ -17,23 +17,25 @@ services:
     container_name: smm_app
     build:
       context: .
-      dockerfile: Dockerfile.app
+      dockerfile: Dockerfile
     ports:
       - "5000:5000"
     depends_on:
       - db
     volumes:
       - .:/app
+    command: ["python", "app.py"]
 
   parsers:
     container_name: smm_parsers
     build:
       context: .
-      dockerfile: Dockerfile.parsers
+      dockerfile: Dockerfile
     depends_on:
       - db
     volumes:
       - .:/app
+    command: ["python", "main.py"]
 
 volumes:
   db_data:
