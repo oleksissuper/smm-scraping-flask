@@ -3,7 +3,7 @@
 The purpose of this trial task is to evaluate the skills in Python for web scraping, MySQL for database management, and HTML/CSS/JavaScript for building a simple front-end interface. The task involves scraping data from specified websites, storing it in a MySQL database, and creating a front-end page to display and filter the data.
 
 ---
- 
+
 ## Task Description
 ### **1. Web Scraping**
 Scrape the following data from the `/services` pages of the provided websites:
